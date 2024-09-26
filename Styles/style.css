@@ -22,18 +22,139 @@ Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services")
                                                                                  Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)
 Grijs #7A7A7A (voor de service-tegel tekst);
 */
-
-
+:root {
+    --Paars: #5722CD;
+    --Blauw: #4845E4;
+    --Roze: #ED4385;
+    --Zwart: #0C0C0C; /*--(voor standaard tekst);*/
+    --Lichtpaars: #F2F0FF; /*--(voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
+    --Lichtgrijs: #F3F6F9; /*(voor de achtergrond van de projecten)*/
+    --Grijs: #7A7A7A; /*--(voor de service-tegel tekst);*/
+    --Wit: #FFFFFF;
+    --Card-size:19rem;
+}
+.purple{
+color: var(--Paars);
+}
 
 /* ------------------------------- 2. Typography ----------------------------------- */
+nav p{
+    font-family: "roboto", monospace;
+    font-size: 1rem;
+    color: var(--Wit);
+}
+h1{
+    font-family: "Merriweather", monospace;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--Wit);
+}
+h2{
+    font-family: "merriweather", monospace;
+    font-size: 1.7rem;
+    line-height: 1.4;
+    font-weight: 600;
+    padding: 0;
+}
+.pHero{
+    font-family: "roboto", monospace;
+    font-size: 1.5rem;
+    color: var(--Wit);
+}
+p{
+    font-family: "roboto", monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--Zwart);
+}
+.card-title{
+    font-family: "Merriweather", monospace;
+    font-size: 1.5rem;
+    color: var(--Paars);
+}
+.card-text{
+    font-family: "roboto", monospace;
+    font-size: 1.5rem;
+    color: var(--Grijs);
+}
+.work-img{
+    width: 60%;
+}
 
 
+/* --------------- 3.1 Reusables ----------------------- */
+div{
+    /*border: 4px solid blue;*/
+}
+section{
+    display: flex;
+    justify-content: center;
+    /*border: 4px solid lightgreen;*/
+    padding: 2rem
+}
+button{
+    background-color: var(--Roze);
+    font-family: "roboto", monospace;
+    font-size: 1rem;
+    padding-inline: 1rem;
+    border-radius: 50rem;
+    height: 3rem;
+    color:white;
+    min-width: 8rem;
+    border-style: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+    appearance: none;
+    backface-visibility: hidden;
 
 
+    box-sizing: border-box;
+
+}
+
+button:hover {
+    background-color: #07c25f;
+    box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+button:hover:after {
+    opacity: .5;
+}
+
+button:active {
+    box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+    transform: translateY(2px);
+    transition-duration: .35s;
+}
+
+
+.hero-helo-box-with{
+    width: 48rem;
+}
+.bg-words{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-family: "roboto", monospace;
+    color: var(--Lichtpaars);
+    z-index: -10;
+    max-width: 48rem;
+    width: 100%;
+    height: 100%;
+}
+.bg-words span{
+    font-size: 24rem; /* Past zich aan op basis van containerbreedte */
+    line-height: 1;
+    font-weight: bold;
+}
 /* ------------------------------- 3. Layout --------------------------------------- */
 body{
     width: 100vw;
-    border: 4px solid yellow;
+
 
 }
 /* --------------- 4.1 Header ------------------------- */
@@ -49,44 +170,31 @@ header nav{
     display: flex;
     justify-content: flex-end;
     gap: 3rem;
-    border: 4px solid black ;
     padding: 0.75rem 2rem 0.75rem ;
-    font-family: "roboto", monospace;
-    font-size: 1rem;
-    color: white;
+
 }
 header .Herro{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 67%;
-    border:solid 4px red;
     text-align: center;
 }
 
 
 header .Herro div{
-    width: 48rem;
+
 }
 header .Herro div h1{
-    font-family: "Merriweather", monospace;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color:white;
+
 }
 header .Herro div p{
     font-family: "roboto", monospace;
-    font-size: 1.5rem;
-    color:white;
+    font-size: 1rem;
+    color: var(--Wit);
 }
 header .Herro div button{
-    background-color: #ED4385;
-    font-family: "roboto", monospace;
-    font-size: 1rem;
-    padding-inline: 1rem;
-    border-radius: 50rem;
-    height: 3rem;
-    color:white;
+
 }
 header .squiggle-con{
     display: flex;
@@ -94,17 +202,25 @@ header .squiggle-con{
     align-items: center;
 }
 
-/* --------------- section 1 ------------------------- */
+/* --------------- section 1 Hello  ------------------------- */
 .hello{
     text-align: center;
-    width: 35rem;
-    font-family: "merriweather", monospace;
-    color:#5722CD;
-    font-weight: 600;
-    font-size: 1.5rem;
+    color:var(--Paars);
+    padding-block: 3rem;
 }
 
-/* --------------- section 2 ------------------------- */
+/* --------------- section 2 Work ------------------------- */
+.work-section{
+    background-color: var(--Lichtgrijs);
+    clip-path: polygon(0 0, 100% 2.5%, 100% 100%, 0% 97.5%);
+}
+div.s0-outer{
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    /*border: solid 1px var(--Paars);*/
+    padding: 10rem;
+}
 div .s1-outer{
     display: flex;
     flex-direction: column;
@@ -113,16 +229,28 @@ div .s1-article{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 4px solid lightblue ;
+    /*border: 4px solid lightblue ;*/
     margin: 0 0 3rem;
+}
+.reverse{
+    flex-direction: row-reverse;
 }
 .s1-text{
     margin: 4rem;
+    width: 18rem;
+    /*border: 4px solid lightblue ;*/
+}
+.s1-text > *{
+    padding-block: 1rem;
+}
+.s1-text img{
+    padding-block: 0.2rem;
 }
 .wrapper {
-    height: 200px;
+    width: 60%;
     display: flex;
     gap: 20px;
+
 }
 .box img {
     width: 100%;
@@ -130,20 +258,98 @@ div .s1-article{
 }
 .box1 img {
     object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 /* --------------- section 3 ------------------------- */
-/* --------------- section 4 ------------------------- */
-/* -----------------footer ------------------------- */
-/* --------------- 3.1 Reusables ----------------------- */
-div{
-    border: 4px solid blue;
+/* --------------- section 4 Cards------------------------- */
+.card-box{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70rem;
+    /*border: 3px solid var(--Zwart);*/
 }
-section{
+.Card{
+    width: var(--Card-size);
+    height: var(--Card-size);
+    border: 0.1rem solid var(--Paars);
+    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--Wit);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.Card h3{
+    color: var(--Paars);
+    padding-block: 1rem;
+    font-size: 1.8rem;
+}
+.Card p{
+    color: var(--Grijs);
+    padding-block: 1rem;
+    font-weight: 400;
+}
+.icon-wrapper {
+    width: 25%;
+    display: flex;
+    gap: 20px;
+}
+/* --------------- section 4 form ------------------------ */
+.form{
+    background: rgb(87,34,192);
+    background: linear-gradient(270deg, rgba(87,34,192,1) 50%, rgba(72,69,228,1) 100%);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+    height: 400px;
     display: flex;
     justify-content: center;
-    border: 4px solid lightgreen;
-    padding: 2rem
+
+
+}
+.form {
+    color: var(--Wit);
+    font-family: "roboto", monospace;
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.form p{
+    color: var(--Wit);
+    font-family: "roboto", monospace;
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.form fieldset{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.form input{
+    width: 100%;
+}
+.form label{
+
+}
+.form textarea{
+    width: 100%;
+}
+.form ::placeholder{
+    font-family: "roboto", monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--Grijs);
+}
+
+
+/* -----------------footer ------------------------- */
+footer{
+    text-align: center;
+    background-color: var(--Zwart);
+}
+
+footer p{
+    padding: 1rem;
+    color: var(--Wit);
+    font-weight: 300;
 }
 /* --------------- 3.2 Other --------------------------- */
 
